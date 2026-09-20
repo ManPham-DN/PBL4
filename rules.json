@@ -1,0 +1,78 @@
+[
+  {
+    "sid": 1000001,
+    "rev": 1,
+    "msg": "Possible TCP port scan detected",
+    "proto": "TCP",
+    "type": "port_scan",
+    "window_seconds": 5,
+    "unique_ports_threshold": 10,
+    "class": "attempted-recon",
+    "priority": 2,
+    "action": "block",
+    "enabled": true
+  },
+  {
+    "sid": 1000002,
+    "rev": 1,
+    "msg": "Possible ICMP flood (ping flood) detected",
+    "proto": "ICMP",
+    "type": "flood",
+    "window_seconds": 3,
+    "packet_threshold": 50,
+    "class": "denial-of-service",
+    "priority": 1,
+    "action": "alert",
+    "enabled": true
+  },
+  {
+    "sid": 1000003,
+    "rev": 1,
+    "msg": "Possible UDP flood detected",
+    "proto": "UDP",
+    "type": "flood",
+    "window_seconds": 3,
+    "packet_threshold": 100,
+    "class": "denial-of-service",
+    "priority": 1,
+    "action": "alert",
+    "enabled": true
+  },
+  {
+    "sid": 1000004,
+    "rev": 1,
+    "msg": "Possible TCP SYN flood detected",
+    "proto": "TCP",
+    "type": "flood",
+    "window_seconds": 3,
+    "packet_threshold": 80,
+    "syn_only": true,
+    "class": "denial-of-service",
+    "priority": 1,
+    "action": "alert",
+    "enabled": true
+  },
+  {
+    "sid": 1000005,
+    "rev": 1,
+    "msg": "Possible ARP spoofing detected (IP-MAC mapping changed)",
+    "proto": "ARP",
+    "type": "arp_spoof",
+    "class": "attempted-admin",
+    "priority": 1,
+    "action": "alert",
+    "enabled": true
+  },
+  {
+    "sid": 1000006,
+    "rev": 1,
+    "msg": "ICMP Echo Request (ping) detected",
+    "proto": "ICMP",
+    "type": "signature",
+    "condition": {"icmp_type": 8},
+    "class": "misc-activity",
+    "priority": 3,
+    "action": "alert",
+    "enabled": true
+  }
+]
